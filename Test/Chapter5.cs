@@ -22,5 +22,13 @@ namespace Test
             var r = Example_5_4.Algorithm_Mapping(f, n);
             Assert.Equal(result, r);
         }
+
+        [Theory]
+        [InlineData(new[]{ 2, -3, 1.5, -1, 3, -2, -3, 3 }, 3.5)]
+        public void E5_8(double[] x, double result)
+        {
+            var r = Example_5_8.Maximum_Consecutive_Subsequence(x);
+            Assert.Equal(result, r);
+        }
     }
 }
