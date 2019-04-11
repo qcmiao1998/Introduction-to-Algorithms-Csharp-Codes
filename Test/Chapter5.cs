@@ -14,5 +14,13 @@ namespace Test
             var r = Example_5_2.PolynomialEvaluation(a, x);
             Assert.Equal(result, r);
         }
+
+        [Theory]
+        [InlineData(new[]{ 2, 0, 0, 4, 4, 3, 5 }, 7, new[]{0, 2, 4})]
+        public void E5_4(int[] f, int n, int[] result)
+        {
+            var r = Example_5_4.Algorithm_Mapping(f, n);
+            Assert.Equal(result, r);
+        }
     }
 }
