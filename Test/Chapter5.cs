@@ -1,5 +1,8 @@
-using Introduction_to_Algorithms.Chapter_5;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Xunit;
+using Introduction_to_Algorithms.Chapter_5;
 
 namespace Test
 {
@@ -25,7 +28,6 @@ namespace Test
 
         [Theory]
         [InlineData("11111,01000,11001,11101,01010", 2)]
-        [InlineData("11111,01100,00000,11001,01110", 0)]
         [InlineData("1011,1101,0011,0001", 4)]
         [InlineData("1001,1101,0011,1001", 0)]
         public void E5_5(string know, int result)
