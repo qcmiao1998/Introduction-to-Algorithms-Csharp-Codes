@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using Introduction_to_Algorithms.Chapter_6;
 
 namespace Test
@@ -46,6 +47,26 @@ namespace Test
         {
             var r = Example_6_3.Interpolation_Search(x, z);
             Assert.Equal(result, r);
+        }
+
+        [Theory]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 3, 3)]
+        [InlineData(new[] { 3, 5, 4, 7, 9 }, 3, 5)]
+        [InlineData(new[] { 1, 7, 9, 6, 10 }, 5, 10)]
+        [InlineData(new[] { 10, 7, 14, 1, 9, 20, 2, 90 }, 5, 10)]
+        public void E6_5_2(int[] x, int k, int result)
+        {
+            var r = Example_6_5_2.Selection(x, k);
+            Assert.Equal(result, r);
+        }
+
+        [Theory]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 6)]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 0)]
+        public void E6_5_2_2(int[] x, int k)
+        {
+            void Act() => Example_6_5_2.Selection(x, k);
+            Assert.Throws<IndexOutOfRangeException>(Act);
         }
     }
 }
