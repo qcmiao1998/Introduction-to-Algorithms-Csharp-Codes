@@ -10,6 +10,7 @@ namespace Test
         [InlineData(new[] { 1, 2, 3, 4, 5 }, 6, 0)]
         [InlineData(new[] { 1, 2, 3, 4, 5 }, 2, 2)]
         [InlineData(new[] { 1, 2, 3, 4, 5 }, 4, 4)]
+        [InlineData(new[] { 1, 2, 3, 5, 6 }, 4, 0)]
         public void E6_2_1(int[] x, int z, int result)
         {
             var r = Example_6_2.Binary_Search(x, z);
@@ -32,6 +33,18 @@ namespace Test
         public void E6_2_3(int[] x, int result)
         {
             var r = Example_6_2.Special_Binary_Search(x);
+            Assert.Equal(result, r);
+        }
+
+        [Theory]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 3, 3)]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 6, 0)]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 2, 2)]
+        [InlineData(new[] { 1, 2, 3, 4, 5 }, 4, 4)]
+        [InlineData(new[] { 1, 2, 3, 5, 6 }, 4, 0)]
+        public void E6_3(int[] x, int z, int result)
+        {
+            var r = Example_6_3.Interpolation_Search(x, z);
             Assert.Equal(result, r);
         }
     }
